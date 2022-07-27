@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>LoginPage.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #54b33e;}
+.s3 { color: #ed864a; font-weight: bold;}
+.s4 { color: #7ec3e6;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+LoginPage.py</font>
+</center></td></tr></table>
+<pre><span class="s0">class </span><span class="s1">LogInPage:</span>
+    <span class="s1">textbox_username_id = </span><span class="s2">&quot;Email&quot;</span>
+    <span class="s1">textbox_password_id = </span><span class="s2">&quot;Password&quot;</span>
+    <span class="s1">button_login_Xpath= </span><span class="s2">&quot;//button[text()='Log in']&quot;</span>
+    <span class="s1">link_logout_linktext = </span><span class="s2">&quot;Logout&quot;</span>
+
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s3">, </span><span class="s1">driver):         </span><span class="s4">#this driver will intiate to the all the class variables for writing all above actions we are using self.driver</span>
+        <span class="s1">self.driver = driver</span>
+
+    <span class="s0">def </span><span class="s1">setUsername(self</span><span class="s3">, </span><span class="s1">username):</span>
+        <span class="s1">self.driver.find_element_by_id(self.textbox_username_id).clear()</span>
+        <span class="s1">self.driver.find_element_by_id(self.textbox_username_id).send_keys(username)</span>
+
+
+    <span class="s0">def </span><span class="s1">SetPassword(self</span><span class="s3">, </span><span class="s1">password):</span>
+        <span class="s1">self.driver.find_element_by_id(self.textbox_password_id).clear()</span>
+        <span class="s1">self.driver.find_element_by_id(self.textbox_password_id).send_keys(password)</span>
+
+
+    <span class="s0">def </span><span class="s1">ClickLogIn(self):</span>
+        <span class="s1">self.driver.find_element_by_Xpath(self.button_login_Xpath).click()</span>
+
+    <span class="s0">def </span><span class="s1">ClickLogOut(self):</span>
+        <span class="s1">self.driver.find_element_by_link_text(self.link_logout_linktext).click()</span>
+</pre>
+</body>
+</html>
